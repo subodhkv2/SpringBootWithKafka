@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
-
 @Service
 public class BookConsumer {
     @Autowired
@@ -16,11 +15,9 @@ public class BookConsumer {
     public void consume(Book book) {
         bookRepository.save(book);
     }
-
     @KafkaListener(topics = "order-A", groupId = "order-group")
     public void consume(String message){
         LOGGER.info(String.format("Message received -> %s", message));
     }
-
 
 }

@@ -16,7 +16,6 @@ public class BookProducer {
         kafkaTemplate.send(AppConstant.TOPIC_1, book);
     }
     private static final Logger LOGGER = LoggerFactory.getLogger(BookProducer.class);
-
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate1;
 

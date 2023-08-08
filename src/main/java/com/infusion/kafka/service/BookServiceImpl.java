@@ -10,10 +10,8 @@ import java.util.Optional;
 
 @Service
 public class BookServiceImpl implements BookService {
-
     @Autowired
     BookRepository bookRepository;
-
     @Override
     public Book saveBook(Book book) {
         return bookRepository.save(book);
