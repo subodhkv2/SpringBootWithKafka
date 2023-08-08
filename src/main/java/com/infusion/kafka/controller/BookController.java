@@ -12,7 +12,7 @@ public class BookController{
     private final BookService bookService;
     private final BookProducer bookProducer;
 
-    @PostMapping
+   @PostMapping
     public ResponseEntity<String> createBook(@RequestBody Book book) {
         bookService.saveBook(book);
         bookProducer.sendBook(book);
