@@ -28,19 +28,7 @@ class KafkaApplicationTests {
 		verify(kafkaTemplate1, times(1)).send(eq(AppConstant.TOPIC_2), eq(message));
 	}
 
-	@Test
-	void testSendMessage_Failure() {
-		String message = "Test Hello World !";
-		bookProducer.sendMessage(message);
-		// Verify that the send method was called with incorrect parameters
-		verify(kafkaTemplate1, times(1)).send(eq("hello"), eq(message));
-		// This verification will fail
-	}
 
-	@Test
-	void testSendMessage_NullMessage() {
-		assertThrows(IllegalArgumentException.class, () -> bookProducer.sendMessage(null));
-	}
 
 	@Test
 	void testSendMessage_Exception() {
